@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block cat_block %}
+
+<section class="container-fluid">
+  
+    <div class="p-4 p-md-5 mb-4 rounded row" style="background-color:#ffca0f91;">
+    
+      <div class="col-md-6 px-0">
+        <h1 class="display-4 ">{{cats.title}}</h1>
+        <p class="lead my-3">{{cats.description}}</p>
+       
+      </div>
+      <div class="col-md-6">
+        <img src="/media/{{cats.image}}" class="rounded" alt="{{cats.title}}" width="100%" height="230rem">
+      </div>
+    </div >
+       
+</section>
+<section>
+    <div class="row m-2">
+        <h2 class="pb-2 border-bottom">{{cats.title}} Posts</h2> 
+      {% for post in post %} 
+      <div class="col-sm-6 col-md-3 mb-2">
+        <div class="card text-bg-dark">
+          <img src="/media/{{post.image}}" class="card-img responsive-img" width="100px" height="200px" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title">{{post.title | truncatewords:5}}</h5>
+            <p class="card-text">{{post.short_description | truncatewords:10 }}</p>
+          
+            <a href="/blogpost/{{post.url}}" class="stretched-link text-white">Continue reading</a>
+            <p class="card-text"><small>{{post.add_date}}</small></p>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <h2>No post in this category</h2>
+      {% endfor %}
+    </div>
+</section>
+
+
+
+{% endblock cat_block %}

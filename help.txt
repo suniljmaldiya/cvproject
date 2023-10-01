@@ -1,0 +1,6 @@
+For adding tinymce editor in django admin in the post model
+https://pypi.org/project/django-tinymce/
+
+
+For changing django admin frontend look
+https://github.com/MaistrenkoAnton/django-material-admin
