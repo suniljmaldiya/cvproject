@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: my_python_app
+    container_name: cvapp
     ports:
       - "8000:8000"
     volumes:
